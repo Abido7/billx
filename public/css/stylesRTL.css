@@ -1,0 +1,264 @@
+/*Header section*/
+
+body {
+  direction: rtl;
+}
+
+ul {
+  text-align: right;
+}
+
+.fa-angle-right:before {
+  content: "\f104";
+}
+
+.toggle span {
+  left: auto;
+  right: 50%;
+}
+
+.topbar-contact-nav .nav-item {
+  margin-right: 0;
+  margin-left: 30px;
+}
+
+.topbar-contact-nav .nav-item .nav-link {
+  background-position: left center;
+}
+
+.years {
+  right: 0;
+  left: 20px;
+}
+
+.topbar-contact-nav .nav-item .nav-link {
+  background-position: right center;
+}
+
+.topbar-contact-nav .nav-item.email .nav-link {
+  padding-right: 25px;
+  padding-left: 0;
+}
+
+.topbar-contact-nav .nav-item.call .nav-link {
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+.topbar-social-nav .nav-item:last-child,
+.topbar-social-nav .nav-item:last-child .nav-link {
+  padding-left: 0px;
+}
+
+html[dir="rtl"] .setting-nav {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.with-texture-bg .image-box.with-grey-bg:after {
+  right: 0;
+  left: auto;
+}
+
+.bullet-with-check li,
+.bullet-with-check li:hover {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+.with-number-line .nav-item {
+  padding-left: 0;
+  padding-right: 45px;
+}
+
+.with-number-line .nav-item span.list-number {
+  left: auto;
+  right: 0;
+}
+
+.with-number-line .nav-item:not(:last-child):before {
+  left: auto;
+  right: 13px;
+}
+
+.start-free-trail::after {
+  right: 0;
+  left: auto;
+}
+
+.newsletter-form .form-control {
+  padding-right: 50px;
+  padding-left: 0;
+  background-position: right 12px center;
+}
+
+.gps-carousel-slider .carousel-caption .text-box {
+  text-align: right;
+}
+
+/* .card-navs li {
+    padding: .3rem 2rem .3rem 1rem;
+    background-position: 6px 8px;
+
+} */
+
+.table-theme-plans th:first-child,
+.table-theme-plans td:first-child {
+  text-align: right;
+}
+
+.contact-social-nav .nav-item {
+  margin-right: 0;
+  margin-left: 2rem;
+}
+
+.contact-social-nav .nav-item:last-child {
+  margin-right: 0rem;
+  margin-left: 0;
+}
+
+.billx-login-modal .btn-close {
+  right: 0;
+  left: 1.2rem;
+}
+
+.gradiant-backgorund {
+  right: -25%;
+  left: 0;
+}
+
+@media (min-width: 2101px) {
+  .primary-menu.navbar-expand-lg .navbar-nav {
+    margin-left: 0;
+    margin-right: 45px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav .dropdown-menu .main-link {
+    font-size: 2rem;
+  }
+
+  .primary-menu.navbar-expand-lg .navbar-nav {
+    margin-left: 18px;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .border-yb:not(:last-child):before {
+    right: 0px;
+    left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .topbar-contact-nav .nav-item {
+    margin-right: 20px;
+  }
+}
+
+/*RTL bootstrap*/
+.ms-1 {
+  margin-left: 0 !important;
+  margin-right: 0.25rem !important;
+}
+
+.ms-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
+.ms-3 {
+  margin-left: 0 !important;
+  margin-right: 1rem !important;
+}
+
+.ms-4 {
+  margin-left: 0 !important;
+  margin-right: 1.5rem !important;
+}
+
+.ms-5 {
+  margin-left: 0 !important;
+  margin-right: 3rem !important;
+}
+
+.me-1 {
+  margin-left: 0.25rem !important;
+  margin-right: 0 !important;
+}
+
+.me-2 {
+  margin-left: 0.5rem !important;
+  margin-right: 0 !important;
+}
+
+.me-3 {
+  margin-left: 1rem !important;
+  margin-right: 0 !important;
+}
+
+.me-4 {
+  margin-left: 1.5rem !important;
+  margin-right: 0 !important;
+}
+
+.me-5 {
+  margin-left: 3rem !important;
+  margin-right: 0 !important;
+}
+
+.ps-1 {
+  padding-left: 0 !important;
+  padding-right: 0.25rem !important;
+}
+
+.ps-2 {
+  padding-left: 0 !important;
+  padding-right: 0.5rem !important;
+}
+
+.ps-3 {
+  padding-left: 0 !important;
+  padding-right: 1rem !important;
+}
+
+.ps-4 {
+  padding-left: 0 !important;
+  padding-right: 1.5rem !important;
+}
+
+.ps-5 {
+  padding-left: 0 !important;
+  padding-right: 3rem !important;
+}
+
+.pe-1 {
+  padding-left: 0.25rem !important;
+  padding-right: 0 !important;
+}
+
+.pe-2 {
+  padding-left: 0.5rem !important;
+  padding-right: 0 !important;
+}
+
+.pe-3 {
+  padding-left: 1rem !important;
+  padding-right: 0 !important;
+}
+
+.pe-4 {
+  padding-left: 1.5rem !important;
+  padding-right: 0 !important;
+}
+
+.pe-5 {
+  padding-left: 3rem !important;
+  padding-right: 0 !important;
+}
+
+.float-start {
+  float: right !important;
+}
