@@ -10,9 +10,9 @@
                             <div class="col-12 col-md-7 col-lg-6 col-xl-5 ms-auto me-xl-5">
                                 <div class="text-box">
                                     <h2 class="mb-2 text-white text-capitalize fw-bolder font-size-38">
-                                        {{$data->getTranslation('title')}}
-{{--                                        Monitor your--}}
-{{--                                        <span class="theme-lightblue-color">business</span> on real-time dashboard--}}
+{{--                                        {{$data->getTranslation('title')}}--}}
+                                        Monitor your
+                                        <span class="theme-lightblue-color">business</span> on real-time dashboard
                                     </h2>
                                 </div>
                             </div>

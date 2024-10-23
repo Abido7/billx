@@ -26,18 +26,12 @@ Route::group(['prefix' => \Mcamara\LaravelLocalization\Facades\LaravelLocalizati
         Route::get('/{any}', function () {
             try {
                 $route = \Illuminate\Support\Str::afterLast(url()->current(), '/');
-                $data = \App\Models\Page::query()->with(['media', 'translations'])->where('title', $route)->first();
-//                $data->addMedia(public_path('images/61109.png'))->toMediaCollection('photo');
-
-                return view($route, compact('data'));
+                return view($route, compact('route'));
             } catch (Exception $e) {
                 return view('404');
             }
         });
 
-//        Route::post('/', function () {
-//            return view('index');
-//        });
     });
 
 
