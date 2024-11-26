@@ -262,3 +262,7 @@ html[dir="rtl"] .setting-nav {
 .float-start {
   float: right !important;
 }
+
+.theme-accordion .accordion-button:after {
+  margin-right: 280px !important;
+}

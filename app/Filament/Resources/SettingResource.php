@@ -18,6 +18,10 @@ class SettingResource extends Resource
     protected static ?string $model = Setting::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Settings';
+    protected static ?string $navigationParentItem = 'System';
+
+
 
     public static function form(Form $form): Form
     {
@@ -45,28 +49,18 @@ class SettingResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-    
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSettings::route('/'),
-            'create' => Pages\CreateSetting::route('/create'),
-            'view' => Pages\ViewSetting::route('/{record}'),
-            'edit' => Pages\EditSetting::route('/{record}/edit'),
+            'index' => Pages\ManageSettings::route('/'),
         ];
-    }    
+    }
 }

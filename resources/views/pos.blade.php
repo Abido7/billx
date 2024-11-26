@@ -9,18 +9,16 @@
                         <div class="row align-items-center h-100">
                             <div class="col-12 col-md-7 col-lg-6 col-xl-5 ms-auto me-xl-5">
                                 <div class="text-box">
-                                    <h2 class="mb-2 text-white text-capitalize fw-bolder font-size-38">
-{{--                                        {{$data->getTranslation('title')}}--}}
-                                        Monitor your
-                                        <span class="theme-lightblue-color">business</span> on real-time dashboard
+                                    <h2 class="mb-2 text-white text-capitalize fw-bolder fs-3">
+                                        {{ $pages->where('link', 'pos')->first()?->getTranslation('title') }}
                                     </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <img class="img-fluid" alt="POS Image" src="{{ asset('images/billx_pos_image_1.jpg') }}"/>
-{{--                <img class="img-fluid" alt="POS Image" src="{{ $data->getFirstMediaUrl('photo') }}"/>--}}
+                <img class="img-fluid" alt="POS Image"
+                    src="{{ $pages->where('link', 'pos')->first()?->getFirstMediaUrl() }}" />
 
             </section>
 
@@ -32,21 +30,17 @@
                                 <div class="col-lg-6">
                                     <div class="image-box d-flex justify-content-center">
                                         <img class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
-                                             src="{{ asset('/images/POS.png') }}"/>
+                                            src="{{ $pages->where('link', 'pos_section_2')->first()?->getFirstMediaUrl() }}" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6 mb-lg-0 mb-4">
                                     <div class="text-box">
-                                        <h3 class="title text-capitalize fw-bold mb-3">Lorem Ipsum has been the
-                                            industry's standard</h3>
-                                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s,
-                                            when an unknown printer took a galley of type and scrambled it to make a
-                                            type specimen book.
-
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s, when an unknown printer took a galley of type and scrambled it to
-                                            make a type specimen book.</p>
+                                        <h3 class="title text-capitalize fw-bold mb-3">
+                                            {{ $pages->where('link', 'pos_section_2')->first()?->getTranslation('title') }}
+                                        </h3>
+                                        <p>
+                                            {{ $pages->where('link', 'pos_section_2')->first()?->getTranslation('content') }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -260,38 +254,47 @@
             <section class="section bg-white">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-11 mx-auto">
-                            <div class="row mb-4">
-                                <div class="col-xl-12 mx-auto">
-                                    <div class="start-free-trail image_bg rounded p-5">
-                                        <div
-                                            class="text-box text-box-reverse d-md-flex align-items-center justify-content-between">
-                                            <div class="w-md-50 mb-md-0 mb-3">
-                                                <span class="title-subtile">Have Any Project In Mind?</span>
-                                                <h3 class="title mb-2 text-capitalize fw-bolder">Start your free
-                                                    trial
-                                                    today</h3>
-                                                <p class="font-size-14 m-0">It is a long established fact that a
-                                                    reader
-                                                    will be <br class="d-md-block d-none"> by the readable when
-                                                    looking
-                                                    at it layout. </p>
-                                            </div>
-                                            <a href="#"
-                                               class="btn btn-primary d-flex align-items-center justify-content-center px-4 py-2">Try
-                                                for Free<i class="fa-solid fa-angle-right fa-1x ms-2"></i></a>
+                        <div class="row mb-md-5 mb-4">
+                            <div class="col-xl-11 mx-auto">
+                                <div class="start-free-trail image_bg rounded p-5"
+                                    style="background-image: {{ url($pages->where('link', 'home_try_free')->first()?->getFirstMediaUrl()) }}">
+                                    <div
+                                        class="text-box text-box-reverse d-md-flex align-items-center justify-content-between">
+                                        <div class="w-md-50 mb-md-0 mb-3">
+                                            <span class="title-subtile">
+                                                {{ $pages->where('link', 'home_try_free')->first()?->getTranslation('title') }}
+                                            </span>
+                                            <h3 class="title mb-2 text-capitalize fw-bolder">
+                                                {{ $pages->where('link', 'home_try_free')->first()?->getTranslation('sub_title') }}
+                                            </h3>
+                                            <p class="font-size-14 m-0">
+                                                {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 70, "\n", true)) !!}
+                                            </p>
                                         </div>
+                                        <a href="#"
+                                            class="btn btn-primary d-flex align-items-center justify-content-center px-4 py-2">
+
+                                            <i class="fa-solid fa-angle-right fa-1x ms-2"></i>
+                                            {{ __('try for free') }}
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="row g-4">
-                                <div class="col-sm-6">
-                                    <img class="img-fluid w-100 d-block" alt="Image 5"
-                                         src="{{ asset('images/billx_image_3.jpg') }}"/>
-                                </div>
-                                <div class="col-sm-6">
-                                    <img class="img-fluid w-100 d-block" alt="Image 6"
-                                         src="{{ asset('images/billx_image_4.jpg') }}"/>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-11 mx-auto">
+                                <div class="row g-4">
+
+                                    <div class="col-sm-6">
+                                        <img class="img-fluid w-100 d-block" alt="Image 3"
+                                            src="{{ $pages->where('link', 'home_try_free')->first()?->getMedia()[1]->getUrl() }}" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img class="img-fluid w-100 d-block" alt="Image 3"
+                                            src="{{ $pages->where('link', 'home_try_free')->first()?->getMedia()[2]->getUrl() }}" />
+                                    </div>
                                 </div>
                             </div>
                         </div>

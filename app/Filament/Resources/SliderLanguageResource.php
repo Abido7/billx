@@ -19,19 +19,31 @@ class SliderLanguageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+    protected static ?string $navigationGroup = 'Sliders';
+    protected static ?string $navigationParentItem = 'System';
+
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('slider_id'),
-                Forms\Components\TextInput::make('lang')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\Select::make('slider_id')
+                    ->relationship('slider', 'title')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+                Forms\Components\Select::make('lang')
+                    ->options([
+                        'en' => 'English',
+                        'ar' => 'عربي'
+                    ])
+                    ->required(),
                 Forms\Components\TextInput::make('title')
+                    ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('sub_title')
                     ->maxLength(255),
-                Forms\Components\Textarea::make('content'),
+                Forms\Components\Textarea::make('content')->required(),
                 Forms\Components\TextInput::make('address')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('meta_title')
@@ -65,28 +77,18 @@ class SliderLanguageResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-    
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSliderLanguages::route('/'),
-            'create' => Pages\CreateSliderLanguage::route('/create'),
-            'view' => Pages\ViewSliderLanguage::route('/{record}'),
-            'edit' => Pages\EditSliderLanguage::route('/{record}/edit'),
+            'index' => Pages\ManageSliderLanguages::route('/'),
         ];
-    }    
+    }
 }

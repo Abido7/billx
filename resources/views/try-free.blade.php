@@ -9,10 +9,14 @@
                     <div class="row">
                         <div class="col-xl-6 col-lg-8 col-md-11 mx-auto">
                             <div class="page-title mx-auto text-center">
-                                <h1 class="mb-2 fw-bolder theme-lightblue-color">Try for free</h1>
-                                <p class="m-0 fw-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                                    voluptua.</p>
+                                <h1 class="mb-2 fw-bolder theme-lightblue-color">
+                                    {{ $pages->where('link', 'try-free')->first()?->getTranslation('title') }}
+
+                                </h1>
+                                <p class="m-0 fw-light">
+                                    {{ $pages->where('link', 'try-free')->first()?->getTranslation('content') }}
+
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -26,61 +30,52 @@
                                 <div class="col-lg-6 mb-lg-0 mb-4">
                                     <div class="text-box">
                                         <h2 class="text-black fs-1 fw-bold">
-                                            Get your trial version of the
-                                            <span class="text-primary">
-                                                Billx system
-                                            </span>
+                                            {{ $pages->where('link', 'try_free_section_2')->first()?->getTranslation('title') }}
                                         </h2>
-                                        <p>Provides the perfect tools for a successful project</p>
+                                        <p>
+                                            {{ $pages->where('link', 'try_free_section_2')->first()?->getTranslation('content') }}
+                                        </p>
                                     </div>
                                     <ul class="navbar-nav with-number-line">
-                                        <li class="nav-item" data-aos="fade-right" data-aos-delay="300">
-                                            <span class="list-number">1</span>
-                                            <strong>Sync between platforms</strong>
-                                            <span>
-                                                No matter if you're using our web interface or mobile app — your data is
-                                                always synced. Just one account for all our services.
-                                            </span>
-                                        </li>
-                                        <li class="nav-item" data-aos="fade-right" data-aos-delay="300">
-                                            <span class="list-number">2</span>
-                                            <strong>Increase Your Company Growth</strong>
-                                            <span>
-                                                No ads, just the crypto and content you love.
-                                            </span>
-                                        </li>
-                                        <li class="nav-item" data-aos="fade-right" data-aos-delay="300">
-                                            <span class="list-number">3</span>
-                                            <strong>24/7 Strong Customer Support</strong>
-                                            <span>Enable privacy mode and app locking to protect your data.</span>
-                                        </li>
+                                        @foreach ($pages->toQuery()->where('link', 'like', '%try_free_section_2_option_%')->get() as $key => $page)
+                                            <li class="nav-item" data-aos="fade-left" data-aos-delay="300">
+                                                <span class="list-number">{{ $key + 1 }}</span>
+                                                <strong>
+                                                    {{ $page?->getTranslation('title') }}
+                                                </strong>
+                                                <span>
+                                                    {{ $page?->getTranslation('content') }}
+
+                                                </span>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="col-lg-6">
-                                    <form class="contact-form">
+                                    <form class="contact-form" id="try_free_form" action="{{ route('try-free.store') }}">
                                         <div class="mb-3">
                                             <input type="text" name="name"
-                                                   class="form-control bg-white font-size-14 fullname-input"
-                                                   id="fullName"
-                                                   placeholder="First Name">
+                                                class="form-control bg-white font-size-14 fullname-input" id="fullName"
+                                                placeholder="{{ __('Type your name') }}">
                                         </div>
                                         <div class="mb-3">
                                             <input type="text" name="phone"
-                                                   class="form-control bg-white font-size-14 number-input"
-                                                   id="phoneNumber"
-                                                   placeholder="Phone Number">
+                                                class="form-control bg-white font-size-14 number-input" id="phoneNumber"
+                                                placeholder="{{ __('Phone Number') }}">
                                         </div>
                                         <div class="mb-3">
                                             <input type="email" name="email"
-                                                   class="form-control bg-white font-size-14 email-input"
-                                                   id="emailAddress"
-                                                   placeholder="Type your Email Address">
+                                                class="form-control bg-white font-size-14 email-input" id="emailAddress"
+                                                placeholder="{{ __('Type your Email Address') }}">
                                         </div>
                                         <div class="row mb-2">
                                             <div class="col-lg-6 mb-3">
-                                                <select class="form-select" name="branchesNo" id="branchesNo">
+                                                <select class="form-select" name="number_of_branches" id="branchesNo">
                                                     <option value="" disabled selected>
-                                                        Number of Branches
+                                                        {{ __('Number of Branches') }}
+                                                    </option>
+                                                    <option value="10">
+                                                        5
                                                     </option>
                                                     <option value="10">
                                                         10
@@ -88,61 +83,62 @@
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-3">
-                                                <input type="text" class="form-control" placeholder="Business name">
+                                                <input type="text" class="form-control" name="business_name"
+                                                    placeholder="{{ __('Business name') }}">
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                                 <select name="country" id="country" class="form-select">
                                                     <option value="" disabled selected>
-                                                        Country
+                                                        {{ __('Country') }}
                                                     </option>
-                                                    <option value="1">
-                                                        Saudi Arabia
+                                                    <option value="saudi arabia">
+                                                        {{ __('Saudi Arabia') }}
                                                     </option>
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                                 <select name="city" id="city" class="form-select">
                                                     <option value="" disabled selected>
-                                                        City
+                                                        {{ __('City') }}
                                                     </option>
-                                                    <option value="1">
-                                                        Riyadh
+                                                    <option value="riyadh">
+                                                        {{ __('Riyadh') }}
                                                     </option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="bg-light-blue mb-3   p-3">
                                             <span class="d-block mb-3">
-                                                Contact me through
+                                                {{ __('Contact me through') }}
                                             </span>
                                             <div class="d-flex justify-content-between">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="contactThorugh"
-                                                           id="contactThorughEmail">
+                                                    <input class="form-check-input" type="radio" value="email"
+                                                        name="contact_me_through" id="contactThorughEmail">
                                                     <label for="contactThorughEmail">
-                                                        Email
+                                                        {{ __('Email') }}
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="contactThorugh"
-                                                           id="contactThorughWP">
+                                                    <input class="form-check-input" type="radio" value="whatsApp"
+                                                        name="contact_me_through" id="contactThorughWP">
                                                     <label for="contactThorughWP">
-                                                        WhatsApp
+                                                        {{ __('WhatsApp') }}
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="contactThorugh"
-                                                           id="contactThorughCall">
+                                                    <input class="form-check-input" type="radio" value="phone"
+                                                        name="contact_me_through" id="contactThorughCall">
                                                     <label for="contactThorughCall">
-                                                        Phone Call
+                                                        {{ __('Phone Call') }}
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <button type="submit"
-                                                    class="btn btn-primary px-3 contact-btn m-0 text-center fw-medium btn-block w-100">
-                                                Send
+                                                class="btn btn-primary px-3 contact-btn m-0 text-center fw-medium btn-block w-100">
+                                                {{ __('Send Message') }}
                                             </button>
                                         </div>
                                     </form>
@@ -151,12 +147,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <img class="img-fluid w-100 d-block" alt="Image 3" src="images/billx_image_3.jpg"/>
-                        </div>
-                        <div class="col-sm-6">
-                            <img class="img-fluid w-100 d-block" alt="Image 4" src="images/billx_image_4.jpg"/>
-                        </div>
+
+                        @foreach ($pages->where('link', 'try_free_section_2')->first()?->getMedia() as $key => $img)
+                            <div class="col-sm-6">
+                                <img class="img-fluid w-100 d-block" alt="Image 3"
+                                    src="{{ $img->geturl() }}" />
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
@@ -169,3 +166,29 @@
         <!-- Page Content End -->
     </main>
 @endsection
+
+@push('scripts')
+    <script type="text/javascript">
+        $("#try_free_form").submit(function(e) {
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+
+            var form = $(this);
+            var actionUrl = form.attr('action');
+
+            $.ajax({
+                type: "POST",
+                url: actionUrl,
+                data: form.serialize(), // serializes the form's elements.
+                success: function(data) {
+                    toastr.success('Message Sent Successfully')
+                    $("#try_free_form").trigger('reset');
+                },
+                error: function(err) {
+                    toastr.error(err.responseJSON.message)
+                }
+            });
+
+        });
+    </script>
+@endpush

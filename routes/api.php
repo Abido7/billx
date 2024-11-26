@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\dashboard\ContactusRequestController;
+use App\Http\Controllers\dashboard\SupportRequestController;
+use App\Http\Controllers\dashboard\TryFreeRequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('contactus-request', [ContactusRequestController::class, 'store'])
+    ->name('contactus.store');
+Route::post('support-request', [SupportRequestController::class, 'store'])
+    ->name('support.store');
+Route::post('try-free-request', [TryFreeRequestController::class, 'store'])
+    ->name('try-free.store');

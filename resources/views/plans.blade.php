@@ -10,12 +10,15 @@
                         <div class="col-xl-11 mx-auto">
                             <div class="page-title mx-auto text-center">
                                 <div class="text-box">
-                                    <h1 class="mb-2 fw-bolder theme-lightblue-color">Plans</h1>
+                                    <h1 class="mb-2 fw-bolder theme-lightblue-color">
+                                        {{ $pages->where('link', 'plans')->first()?->getTranslation('title') }}
+                                    </h1>
                                     <h2 class="fs-2 fw-semibold text-black">
-                                        Shared Cloud SSD Hosting Powered by cPanel
+                                        {{ $pages->where('link', 'plans')->first()?->getTranslation('content') }}
                                     </h2>
-                                    <p class="mb-0 fw-light ">NOW WITH FREE DOMAIN FOR LIFE AND FREE WEBSITE TRANSFER ON
-                                        ALL PLANS </p>
+                                    <p class="mb-0 fw-light ">
+                                        {{ $pages->where('link', 'plans')->first()?->getTranslation('sub_title') }}
+                                     </p>
                                 </div>
                             </div>
                             <div class="plans-types d-flex flex-wrap justify-content-center my-3">

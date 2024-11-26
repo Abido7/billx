@@ -9,6 +9,8 @@ class SliderLanguage extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function slider()
     {
         return $this->belongsTo(Slider::class);

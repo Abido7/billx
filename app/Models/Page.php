@@ -30,4 +30,9 @@ class Page extends Model implements HasMedia
         return $page_translation?->$field;
     }
 
+
+    public function scopeTitle($query, $title)
+    {
+        return $query->where('title', '=', $title)->first();
+    }
 }

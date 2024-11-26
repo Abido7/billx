@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Models\Page;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -15,26 +18,18 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 
 
-Route::group(['prefix' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::setLocale(),
-    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']],
+
+
+Route::group(
+    [
+        'prefix' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::setLocale(),
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ],
     function () {
-        Route::get('/', function () {
-            $pages = \App\Models\Page::get();
-            return view('index', compact('pages'));
+        Route::prefix('/')->group(function () {
+            Route::get('/', [HomeController::class, 'index']);
+            Route::get('home', [HomeController::class, 'index']);
         });
-
-        Route::get('/{any}', function () {
-            try {
-                $route = \Illuminate\Support\Str::afterLast(url()->current(), '/');
-                return view($route, compact('route'));
-            } catch (Exception $e) {
-                return view('404');
-            }
-        });
-
-    });
-
-
-
-
-
+        Route::get('/{any}', [PageController::class, 'index']);
+    }
+);
