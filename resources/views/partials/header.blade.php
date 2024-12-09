@@ -70,7 +70,7 @@
                         @foreach ($naveBarItems as $page)
                             <li class="nav-item">
                                 <a role="button" class="nav-link" href="{{ url("$page->link") }}">
-                                    {{ str_replace('-', ' ', strtoupper($page->getTranslation('title'))) }}
+                                    {{ str_replace(['-','_'], ' ', strtoupper($page->getTranslation('title'))) }}
                                 </a>
                             </li>
                         @endforeach

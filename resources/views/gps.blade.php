@@ -144,7 +144,8 @@
                                             {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 70, "\n", true)) !!}
                                         </p>
                                     </div>
-                                    <a href="#"
+                                    <a href="{{url('try-free')}}"
+
                                         class="btn btn-primary d-flex align-items-center justify-content-center px-4 py-2">
 
                                         <i class="fa-solid fa-angle-right fa-1x ms-2"></i>

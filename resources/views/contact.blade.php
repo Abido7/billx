@@ -10,10 +10,10 @@
                         <div class="col-xl-6 col-lg-8 col-md-11 mx-auto">
                             <div class="page-title mx-auto text-center">
                                 <h1 class="mb-2 fw-bolder theme-lightblue-color">
-                                    {{ $pages->where('link', 'contact-us')->first()?->getTranslation('title') }}
+                                    {{ $pages->where('link', 'contact_us')->first()?->getTranslation('title') }}
                                 </h1>
                                 <p class="m-0 fw-light">
-                                    {{ $pages->where('link', 'contact-us')->first()?->getTranslation('content') }}
+                                    {{ $pages->where('link', 'contact_us')->first()?->getTranslation('content') }}
                                 </p>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                             {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 70, "\n", true)) !!}
                                         </p>
                                     </div>
-                                    <a href="#"
+                                    <a href="{{url('try-free')}}"
                                         class="btn btn-primary d-flex align-items-center justify-content-center px-4 py-2">
 
                                         <i class="fa-solid fa-angle-right fa-1x ms-2"></i>

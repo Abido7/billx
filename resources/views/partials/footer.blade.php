@@ -37,7 +37,7 @@
                                 {{__('Privacy Poilcy')}}
                             </a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url('contact-us') }}">
+                            <li class="nav-item"><a class="nav-link" href="{{ url('contact') }}">
                                {{__('Contact Us')}}
                             </a>
                             </li>
