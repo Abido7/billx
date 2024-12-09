@@ -16,12 +16,7 @@ class PageController extends Controller
         $naveBarItems = Page::where('in_navbar', 1)
             ->where('status', 1)
             ->with('translations')->get();
-        if ($pages->pluck('link')->contains($route)) {
 
-            return view($route, compact('route', 'settings', 'naveBarItems', 'pages'));
-        } else {
-
-            return view('404', compact('route', 'settings', 'naveBarItems', 'pages'));
-        }
+        return view($pages->pluck('link')->contains($route) ? $route : '404', compact('route', 'settings', 'naveBarItems', 'pages'));
     }
 }

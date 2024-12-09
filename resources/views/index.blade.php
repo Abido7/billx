@@ -4,7 +4,7 @@
         <div id="page_wrapper" class="wrapper">
             <!-------------------------------------- Start Body ------------------------------------------>
             <!----------------------------------- Start Slider ---------------------------------------------->
-            <section class="section main-banner banner-gradient carousel slide gps-carousel-slider" id="gpsCarouselSlider"
+            <section class="section main-banner  carousel slide gps-carousel-slider" id="gpsCarouselSlider"
                 data-ride="carousel">
                 <div class="carousel-inner ">
                     @foreach ($sliders as $slider)
