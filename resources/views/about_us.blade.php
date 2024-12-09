@@ -9,11 +9,11 @@
                         <div class="col-xl-6 col-lg-8 col-md-11 mx-auto">
                             <div class="page-title mx-auto text-center">
                                 <h1 class="mb-2 fw-bolder theme-lightblue-color">
-                                    {{ __(Str::upper($pages->where('link', 'about-us')?->first()?->title)) }}
+                                    {{ __(Str::upper($pages->where('link', 'about_us')?->first()?->title)) }}
 
                                 </h1>
                                 <p class="mb-0 fw-light ">
-                                    {{ $pages->where('link', 'about-us')?->first()?->getTranslation('content') }}
+                                    {{ $pages->where('link', 'about_us')?->first()?->getTranslation('content') }}
                                 </p>
                             </div>
                         </div>

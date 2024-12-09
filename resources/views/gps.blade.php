@@ -10,7 +10,7 @@
                             <div class="col-12 col-md-7 col-lg-6 col-xl-5 ms-auto me-xl-5">
                                 <div class="text-box">
                                     <h2 class="mb-2 text-white text-capitalize fw-bolder font-size-38">
-                                        {{ $pages->where('link', 'gps')->first()?->getTranslation('title') }}
+                                        {{ $pages->where('link', 'gps_section_1')->first()?->getTranslation('title') }}
                                     </h2>
                                 </div>
                             </div>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <img class="img-fluid w-100 object-fit-cover" alt="GPS Image"
-                    src="{{ $pages->where('link', 'gps')->first()?->getFirstMediaUrl() }}" />
+                    src="{{ $pages->where('link', 'gps_section_1')->first()?->getFirstMediaUrl() }}" />
             </section>
 
             <section class="section bg-white with-texture-bg">

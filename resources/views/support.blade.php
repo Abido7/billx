@@ -29,7 +29,7 @@
                             <div class="row gx-md-5">
                                 <div class="col-sm-6 mb-lg-0 mb-4">
                                     <img class="img-fluid w-100 d-block support_image rounded" alt="Image 3"
-                                        src="{{  $pages->where('link', 'support-request')->first()?->getFirstMediaUrl() }}" />
+                                        src="{{  $pages->where('link', 'support')->first()?->getFirstMediaUrl() }}" />
                                 </div>
                                 <div class="col-lg-6">
                                     <form class="contact-form" method="post" id="support-form"

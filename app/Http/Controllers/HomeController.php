@@ -15,7 +15,9 @@ class HomeController extends Controller
         $sliders = \App\Models\Slider::query()->with('translations')->where('status', 1)->get();
         $naveBarItems = Page::where('in_navbar', 1)
             ->where('status', 1)
-            ->with('translations')->get();
+            ->with('translations')
+            ->orderBy('created_at', 'asc')
+            ->get();
         return view('index', compact('pages', 'naveBarItems', 'settings', 'sliders'));
     }
 }

@@ -31,13 +31,13 @@
                     </div>
                     <div class="theme-widget-body">
                         <ul class="navbar-nav footer-nav">
-                            <li class="nav-item"><a class="nav-link" href="{{ asset('about-us') }}">{{__('About Us')}}</a>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('about_us') }}">{{__('About Us')}}</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{{ asset('privacy') }}">
+                            <li class="nav-item"><a class="nav-link" href="{{ url('privacy') }}">
                                 {{__('Privacy Poilcy')}}
                             </a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{{ asset('contact-us') }}">
+                            <li class="nav-item"><a class="nav-link" href="{{ url('contact-us') }}">
                                {{__('Contact Us')}}
                             </a>
                             </li>
@@ -53,18 +53,18 @@
                     <div class="theme-widget-body">
                         <ul class="navbar-nav footer-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ asset('support-request') }}">
+                                <a class="nav-link" href="{{ url('support') }}">
                             
                                     {{ __(str_replace('-', ' ', 'Support-Request')) }}
                                 </a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{{ asset('faq') }}">
+                            <li class="nav-item"><a class="nav-link" href="{{ url('faq') }}">
                                 
                                 {{ __('Faq Questions') }}
                             </a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="{{ asset('plans') }}">{{__('Plans')}}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url('plans') }}">{{__('Plans')}}</a></li>
                         </ul>
                     </div>
                 </div>

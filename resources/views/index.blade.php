@@ -64,7 +64,7 @@
                                 <div class="col-lg-6 mb-lg-0 mb-4">
                                     <div class="image-box with-grey-bg">
                                         <img class="img-fluid w-100 d-block" alt="Main Banner"
-                                            src="{{ url($pages->where('link', 'about-us')?->first()?->getFirstMediaUrl()) }}" />
+                                            src="{{ url($pages->where('link', 'home_about_us')?->first()?->getFirstMediaUrl()) }}" />
                                         <div class="years text-white d-flex align-items-center">
                                             <!-- <p class="text-white"> -->
                                             <span class="d-inline-block">{{ __('Years of Experience') }}</span>
@@ -78,13 +78,13 @@
                                 <div class="col-lg-6">
                                     <div class="text-box">
                                         <span class="title-subtile">
-                                            {{ __(Str::upper($pages->where('link', 'about-us')?->first()?->title)) }}
+                                            {{ __(Str::upper($pages->where('link', 'home_about_us')?->first()?->title)) }}
                                         </span>
                                         <h3 class="title mb-3">
-                                            {{ $pages->where('link', 'about-us')->first()->getTranslation('title') }}
+                                            {{ $pages->where('link', 'home_about_us')->first()->getTranslation('title') }}
                                         </h3>
                                         <p>
-                                            {{ $pages->where('link', 'about-us')->first()->getTranslation('content') }}
+                                            {{ $pages->where('link', 'home_about_us')->first()->getTranslation('content') }}
                                         </p>
 
                                         <div class="d-inline-flex p-2 rounded-3 theme-lightblue-bg lighten-1 mb-3">

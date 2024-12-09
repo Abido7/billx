@@ -10,7 +10,7 @@
                             <div class="col-12 col-md-7 col-lg-6 col-xl-5 ms-auto me-xl-5">
                                 <div class="text-box">
                                     <h2 class="mb-2 text-white text-capitalize fw-bolder fs-3">
-                                        {{ $pages->where('link', 'pos')->first()?->getTranslation('title') }}
+                                        {{ $pages->where('link', 'pos_section_1')->first()?->getTranslation('title') }}
                                     </h2>
                                 </div>
                             </div>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <img class="img-fluid" alt="POS Image"
-                    src="{{ $pages->where('link', 'pos')->first()?->getFirstMediaUrl() }}" />
+                    src="{{ $pages->where('link', 'pos_section_1')->first()?->getFirstMediaUrl() }}" />
 
             </section>
 

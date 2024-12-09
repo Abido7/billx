@@ -15,6 +15,7 @@ class PageController extends Controller
         $settings = Setting::get();
         $naveBarItems = Page::where('in_navbar', 1)
             ->where('status', 1)
+            ->orderBy('created_at', 'asc')
             ->with('translations')->get();
 
         return view($pages->pluck('link')->contains($route) ? $route : '404', compact('route', 'settings', 'naveBarItems', 'pages'));
