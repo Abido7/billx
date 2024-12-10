@@ -78,13 +78,13 @@
                                 <div class="col-lg-6">
                                     <div class="text-box">
                                         <span class="title-subtile">
-                                            {{ __(Str::upper($pages->where('link', 'home_about_us')?->first()?->title)) }}
+                                            {{ __(Str::upper($pages->where('link', 'home_about_us')?->first()?->getTranslation('title'))) }}
                                         </span>
                                         <h3 class="title mb-3">
-                                            {{ $pages->where('link', 'home_about_us')->first()->getTranslation('title') }}
+                                            {{ $pages->where('link', 'home_about_us')->first()?->getTranslation('title') }}
                                         </h3>
                                         <p>
-                                            {{ $pages->where('link', 'home_about_us')->first()->getTranslation('content') }}
+                                            {{ $pages->where('link', 'home_about_us')->first()?->getTranslation('content') }}
                                         </p>
 
                                         <div class="d-inline-flex p-2 rounded-3 theme-lightblue-bg lighten-1 mb-3">
