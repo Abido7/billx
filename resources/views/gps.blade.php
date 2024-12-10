@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="image-box d-flex justify-content-center">
-                                            <img class="img-fluid w-lg-75 d-inline-block rounded-circle" alt="Main Banner"
+                                            <img class="img-fluid w-lg-75 d-inline-block rounded" alt="Main Banner"
                                                 src="{{ $product->getFirstMediaUrl() }}" />
                                         </div>
                                     </div>
