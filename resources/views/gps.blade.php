@@ -49,41 +49,6 @@
                 </div>
             </section>
 
-            <section class="section bg-white with-texture-bg">
-                <div class="container">
-                    @foreach ($pages->toQuery()->where('link', 'like', '%gps_products_%')->get() as $product)
-                        @php
-                            if (app()->getLocale() == 'en') {
-                                $dir = $loop->even ? 'ltr' : 'rtl';
-                            } else {
-                                $dir = $loop->odd ? 'ltr' : 'rtl';
-                            }
-                        @endphp
-                        <div class="row">
-                            <div class="col-xl-11 mx-auto">
-                                <div class="row gx-lg-5 align-items-center" dir="{{ $dir }}">
-                                    <div class="col-lg-6 mb-lg-0 mb-4">
-                                        <div class="text-box">
-                                            <h3 class="title text-capitalize fw-bold mb-3">
-                                                {{ $product->getTranslation('title') }}
-                                            </h3>
-                                            <p>
-                                                {{ $product->getTranslation('content') }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="image-box d-flex justify-content-center">
-                                            <img class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
-                                                src="{{ $product->getFirstMediaUrl() }}" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </section>
 
 
 
@@ -126,6 +91,43 @@
                 </div>
             </section>
 
+            <section class="section bg-white with-texture-bg">
+                <div class="container">
+                    @foreach ($pages->toQuery()->where('link', 'like', '%gps_products_%')->get() as $product)
+                        @php
+                            if (app()->getLocale() == 'en') {
+                                $dir = $loop->even ? 'ltr' : 'rtl';
+                            } else {
+                                $dir = $loop->odd ? 'ltr' : 'rtl';
+                            }
+                        @endphp
+                        <div class="row">
+                            <div class="col-xl-11 mx-auto">
+                                <div class="row gx-lg-5 align-items-center" dir="{{ $dir }}">
+                                    <div class="col-lg-6 mb-lg-0 mb-4">
+                                        <div class="text-box {{ app()->getLocale() == 'ar' ? 'text-end' : 'text-start' }}">
+                                            <h3 class="title text-capitalize fw-bold mb-3">
+                                                {{ $product->getTranslation('title') }}
+                                            </h3>
+                                            <p>
+                                                {{ $product->getTranslation('content') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="image-box d-flex justify-content-center">
+                                            <img class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
+                                                src="{{ $product->getFirstMediaUrl() }}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+
+
             <section class="section bg-white">
                 <div class="container">
                     <<div class="row mb-md-5 mb-4">
@@ -144,8 +146,7 @@
                                             {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 70, "\n", true)) !!}
                                         </p>
                                     </div>
-                                    <a href="{{url('try-free')}}"
-
+                                    <a href="{{ url('try-free') }}"
                                         class="btn btn-primary d-flex align-items-center justify-content-center px-4 py-2">
 
                                         <i class="fa-solid fa-angle-right fa-1x ms-2"></i>
