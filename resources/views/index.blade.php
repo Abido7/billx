@@ -280,7 +280,7 @@
                                             {{ $pages->where('link', 'home_try_free')->first()?->getTranslation('sub_title') }}
                                         </h3>
                                         <p class="font-size-14 m-0">
-                                            {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 70, "\n", true)) !!}
+                                            {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 120, "\n", true)) !!}
                                         </p>
                                     </div>
                                     <a href="#"

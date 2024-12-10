@@ -13,7 +13,7 @@
 
                                 </h1>
                                 <p class="mb-0 fw-light ">
-                                    {{ $pages->where('link', 'about_us')?->first()?->getTranslation('content') }}
+                                    {{-- {{ $pages->where('link', 'about_us')?->first()?->getTranslation('content') }} --}}
                                 </p>
                             </div>
                         </div>
@@ -26,21 +26,13 @@
                     <div class="row">
                         <div class="col-xl-11 mx-auto mb-4">
                             <div class="row">
-                                <div class="col-lg-7 col-md-6">
-                                    <div class="text-box">
-                                        <span class="title-subtile">
+                                <div class="col-12">
+                                    <div class="text-box text-center mb-5 px-5">
+                                        <h2 class="title text-capitalize mb-4">
                                             {{ $pages->where('link', 'about_us_section_2')?->first()?->getTranslation('title') }}
-                                        </span>
-                                        <h5 class="title text-capitalize">
-                                            {{ $pages->where('link', 'about_us_section_2')?->first()?->getTranslation('sub_title') }}.
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-6">
-                                    <div class="text-box">
-                                        <p>
+                                        </h2>
+                                        <p class="px-5">
                                             {{ $pages->where('link', 'about_us_section_2')?->first()?->getTranslation('content') }}.
-                                        </p>
                                         </p>
                                     </div>
                                 </div>
@@ -111,11 +103,11 @@
                                         <img class="img-fluid w-100 d-block mb-md-5 mb-3" alt="Our Vision"
                                             src="{{ url($pages->where('link', 'our_mission')?->first()?->getFirstMediaUrl()) }}"
                                             data-aos="fade-right" data-aos-delay="300" />
-                                        <h5 class="title mb-2 text-capitalize theme-lightblue-color" data-aos="fade-right"
+                                        <h5 class="title text-capitalize theme-lightblue-color" data-aos="fade-right"
                                             data-aos-delay="300">
                                             {{ $pages->where('link', 'our_mission')?->first()?->getTranslation('title') }}
                                         </h5>
-                                        <p class="mb-3 mb-md-5 font-size-14" data-aos="fade-right" data-aos-delay="300">
+                                        <p class="font-size-14" data-aos="fade-right" data-aos-delay="300">
                                         <p>
                                             {{ $pages->where('link', 'our_mission')?->first()?->getTranslation('content') }}
                                         </p>
@@ -124,11 +116,11 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="text-box">
-                                        <h5 class="title mb-2 mt-md-5 text-capitalize theme-lightblue-color"
-                                            data-aos="fade-left" data-aos-delay="300">
+                                        <h5 class="title mt-md-5 text-capitalize theme-lightblue-color" data-aos="fade-left"
+                                            data-aos-delay="300">
                                             {{ $pages->where('link', 'our_vision')?->first()?->getTranslation('title') }}
                                         </h5>
-                                        <p class="mb-md-5 mb-3 font-size-15" data-aos="fade-left" data-aos-delay="300">
+                                        <p class=" font-size-15" data-aos="fade-left" data-aos-delay="300">
                                         <p>
                                             {{ $pages->where('link', 'our_vision')?->first()?->getTranslation('content') }}
                                         </p>
@@ -198,10 +190,12 @@
                                             {{ $pages->where('link', 'home_try_free')->first()?->getTranslation('sub_title') }}
                                         </h3>
                                         <p class="font-size-14 m-0">
-                                            {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 70, "\n", true)) !!}
+                                            {!! nl2br(
+                                                wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 120, "\n", true),
+                                            ) !!}
                                         </p>
                                     </div>
-                                    <a href="{{url('try-free')}}"
+                                    <a href="{{ url('try-free') }}"
                                         class="btn btn-primary d-flex align-items-center justify-content-center px-4 py-2">
 
                                         <i class="fa-solid fa-angle-right fa-1x ms-2"></i>

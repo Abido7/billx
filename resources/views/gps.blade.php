@@ -91,9 +91,23 @@
                 </div>
             </section>
 
+            {{-- products section --}}
+
             <section class="section bg-white with-texture-bg">
                 <div class="container">
-                    @foreach ($pages->toQuery()->where('link', 'like', '%gps_products_%')->get() as $product)
+                    {{-- title --}}
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-8 col-md-11 mx-auto">
+                            <div class="page-title mx-auto text-center">
+                                <h1 class="my-2 fw-bolder theme-lightblue-color">
+                                    {{ __(Str::upper($pages->where('link', 'gps_our_products')?->first()?->getTranslation('title'))) }}
+                                </h1>
+                          
+                            </div>
+                        </div>
+                    </div>
+
+                    @foreach ($pages->toQuery()->where('link', 'like', '%gps_product_%')->get() as $product)
                         @php
                             if (app()->getLocale() == 'en') {
                                 $dir = $loop->even ? 'ltr' : 'rtl';
@@ -143,7 +157,9 @@
                                             {{ $pages->where('link', 'home_try_free')->first()?->getTranslation('sub_title') }}
                                         </h3>
                                         <p class="font-size-14 m-0">
-                                            {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 70, "\n", true)) !!}
+                                            {!! nl2br(
+                                                wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 120, "\n", true),
+                                            ) !!}
                                         </p>
                                     </div>
                                     <a href="{{ url('try-free') }}"
@@ -156,27 +172,28 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
 
-                <div class="row">
-                    <div class="col-xl-11 mx-auto">
-                        <div class="row g-4">
-                            @foreach ($pages->where('link', 'home_try_free')->first()?->getMedia() as $key => $img)
-                                @if ($key > 2)
-                                    <div class="col-sm-6">
-                                        <img class="img-fluid w-100 d-block" alt="Image 3" src="{{ $img->getUrl() }}" />
-                                    </div>
-                                @endif
-                            @endforeach
+                    <div class="row">
+                        <div class="col-xl-11 mx-auto">
+                            <div class="row g-4">
+                                @foreach ($pages->where('link', 'home_try_free')->first()?->getMedia() as $key => $img)
+                                    @if ($key > 2)
+                                        <div class="col-sm-6">
+                                            <img class="img-fluid w-100 d-block" alt="Image 3"
+                                                src="{{ $img->getUrl() }}" />
+                                        </div>
+                                    @endif
+                                @endforeach
 
+                            </div>
                         </div>
                     </div>
                 </div>
-        </div>
-        </section>
+            </section>
 
-        <!-- ========== End Service Details  ========== -->
-        <!-------------------------------------- End Body ------------------------------------------>
+            <!-- ========== End Service Details  ========== -->
+            <!-------------------------------------- End Body ------------------------------------------>
         </div>
         <!-- Page Content End -->
     </main>
