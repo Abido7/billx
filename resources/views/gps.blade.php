@@ -130,7 +130,7 @@
 
             <section class="section bg-white">
                 <div class="container">
-                    <<div class="row mb-md-5 mb-4">
+                    <div class="row mb-md-5 mb-4">
                         <div class="col-xl-11 mx-auto">
                             <div class="start-free-trail image_bg rounded p-5"
                                 style="background-image: {{ url($pages->where('link', 'home_try_free')->first()?->getFirstMediaUrl()) }}">
