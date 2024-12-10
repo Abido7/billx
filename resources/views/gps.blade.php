@@ -101,7 +101,7 @@
                                 $dir = $loop->odd ? 'ltr' : 'rtl';
                             }
                         @endphp
-                        <div class="row my-5">
+                        <div class="row my-5 py-4">
                             <div class="col-xl-11 mx-auto">
                                 <div class="row gx-lg-5 align-items-center" dir="{{ $dir }}">
                                     <div class="col-lg-6 mb-lg-0 mb-4">
