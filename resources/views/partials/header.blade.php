@@ -68,7 +68,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  mb-2 mb-lg-0" id='nav'>
                         @foreach ($naveBarItems as $page)
-                            <li class="nav-item">
+                            <li class="nav-item" title="{{ $page->link  == 'pos' ? __("Plans"):''}}">
                                 <a role="button" class="nav-link" href="{{ url("$page->link") }}">
                                     {{ str_replace(['-','_'], ' ', strtoupper($page->getTranslation('title'))) }}
                                 </a>
