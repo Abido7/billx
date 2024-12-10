@@ -101,7 +101,7 @@
                                 $dir = $loop->odd ? 'ltr' : 'rtl';
                             }
                         @endphp
-                        <div class="row">
+                        <div class="row my-5">
                             <div class="col-xl-11 mx-auto">
                                 <div class="row gx-lg-5 align-items-center" dir="{{ $dir }}">
                                     <div class="col-lg-6 mb-lg-0 mb-4">
@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="image-box d-flex justify-content-center">
-                                            <img class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
+                                            <img class="img-fluid w-lg-75 d-inline-block rounded-circle" alt="Main Banner"
                                                 src="{{ $product->getFirstMediaUrl() }}" />
                                         </div>
                                     </div>
