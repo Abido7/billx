@@ -19,11 +19,13 @@
                                             <p>{{ $slider->getTranslation('content') }}
                                             </p>
                                             <div class="d-flex">
-                                                <a href="{{ url("$slider->action_type") }}" class="btn btn-primary px-3 py-2 mx-4">
+                                                <a href="{{ url("$slider->action_type") }}"
+                                                    class="btn btn-primary px-3 py-2 mx-4">
                                                     {{ __('try for free') }}
                                                 </a>
                                                 <!-- <button> -->
-                                                <a href="{{ url("$slider->link") }}" class="btn btn-outline-primary py-2 px-4">
+                                                <a href="{{ url("$slider->link") }}"
+                                                    class="btn btn-outline-primary py-2 px-4">
                                                     <i class="fa-solid fa-play mx-1"></i>
                                                     {{ __('watch video') }}
                                                 </a>
@@ -215,7 +217,7 @@
                                 <div class="col-lg-6">
                                     <div class="image-box with-grey-bg">
                                         <img class="img-fluid w-100 d-block" alt="Main Banner"
-                                            src="{{ url($pages->where('link', 'why_choose_billxs')->first()?->getFirstMediaUrl()) }}" />
+                                            src="{{ url("$pages->where('link', 'why_choose_billxs')->first()?->getFirstMediaUrl()") }}" />
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +282,9 @@
                                             {{ $pages->where('link', 'home_try_free')->first()?->getTranslation('sub_title') }}
                                         </h3>
                                         <p class="font-size-14 m-0">
-                                            {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 120, "\n", true)) !!}
+                                            {!! nl2br(
+                                                wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 120, "\n", true),
+                                            ) !!}
                                         </p>
                                     </div>
                                     <a href="#"
