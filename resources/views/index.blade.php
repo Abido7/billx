@@ -215,7 +215,7 @@
                                 <div class="col-lg-6">
                                     <div class="image-box with-grey-bg">
                                         <img class="img-fluid w-100 d-block" alt="Main Banner"
-                                            src="{{ asset('images/billx_image_2.png') }}" />
+                                            src="{{ url($pages->where('link', 'why_choose_billxs')->first()?->getFirstMediaUrl()) }}" />
                                     </div>
                                 </div>
                             </div>
