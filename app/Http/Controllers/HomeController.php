@@ -15,7 +15,7 @@ class HomeController extends Controller
         $pages = Page::query()->with('translations')->where('status', 1)->get();
         $settings = Setting::get();
         $sliders = Slider::query()->with('translations')->where('status', 1)->get();
-        $plans = Plan::query()->with(['translations', 'options'])->where('status', 1)->get();
+        $plans = Plan::query()->with(['translations', 'options'])->where('status', 1)->orderByDesc('price')->get();
         $naveBarItems = Page::where('in_navbar', 1)
             ->where('status', 1)
             ->with('translations')
