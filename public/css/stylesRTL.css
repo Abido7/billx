@@ -23,6 +23,10 @@ ul {
   right: 50%;
 }
 
+.planFeatures li p {
+  font-size: 12px;
+}
+
 .topbar-contact-nav .nav-item {
   margin-right: 0;
   margin-left: 30px;
