@@ -12,7 +12,7 @@ class PageController extends Controller
     public function index()
     {
         $route = \Illuminate\Support\Str::afterLast(url()->current(), '/');
-        $pages = Page::where('status', 1)->with('translations')->get();
+        $pages = Page::where('status', operator: 1)->with('translations')->get();
         $plans = Plan::query()->with(['translations', 'options'])->where('status', operator: 1)->orderByDesc('price')->get();
         $settings = Setting::get();
         $naveBarItems = Page::where('in_navbar', 1)
