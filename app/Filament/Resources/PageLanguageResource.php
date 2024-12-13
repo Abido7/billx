@@ -22,6 +22,7 @@ class PageLanguageResource extends Resource
     protected static ?string $navigationParentItem = 'System';
 
     protected static ?string  $modelLabel = 'Page Translation';
+    protected static bool $shouldRegisterNavigation = false;
 
     protected static ?int $navigationSort = 2;
 

@@ -51,203 +51,53 @@
             <section class="section theme-grey-bg plans-section">
                 <div class="container">
                     <div class="text-center">
-                        <h2 class="fs-3 text-black ">Shared Cloud SSD Hosting Powered by cPanel</h2>
-                        <p>Now with free domain for life and free website transfer on all plans</p>
+                        <h2 class="fs-3 text-black ">
+                            {{ $pages->where('link', 'plans')->first()?->getTranslation('title') }}
+                        </h2>
+                        <p>
+                            {{ $pages->where('link', 'plans')->first()?->getTranslation('content') }}
+
+                        </p>
                     </div>
-                    <div class="plans-types d-flex flex-wrap justify-content-center mb-5">
-                        <div class="form-group type ">
-                            <input type="radio" name="plans-type" id="sharedHosting">
-                            <label for="sharedHosting">
-                                Shared Hosting
-                            </label>
-                        </div>
-                        <div class="form-group type ">
-                            <input type="radio" name="plans-type" id="cloudVPSHosting">
-                            <label for="cloudVPSHosting">
-                                Cloud VPS Hosting
-                            </label>
-                        </div>
-                        <div class="form-group type">
-                            <input type="radio" name="plans-type" id="dedicatedCPUServers">
-                            <label for="dedicatedCPUServers">
-                                Dedicated CPU Servers
-                            </label>
-                        </div>
-                    </div>
+
                     <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <div class="card text-center rounded-0 border-0">
-                                <div class="card-body p-5">
-                                    <h3 class="fw-bold">
-                                        $ 89.00
-                                    </h3>
-                                    <p class="text-primary mb-0">
-                                        FastCloud Plus
-                                    </p>
-                                    <p class="text-muted">
-                                        Month
-                                    </p>
-                                    <hr>
-                                    <ul class="planFeatures ">
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                Rich landing pages
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                100+ Unique Components
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                Speedy build tooling
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                6 months free support
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-link d-inline-block">
-                                        See More
-                                    </a>
-                                    <div class="mt-3">
-                                        <button class="btn btn-outline-primary d-inline-block">
-                                            Get Started
-                                        </button>
+                        @foreach ($plans as $plan)
+                            <div class="col-lg-4 col-md-6 mb-3">
+                                <div class="card text-center rounded-0 border-0">
+                                    <div class="card-body p-5">
+                                        <h3 class="fw-bold">
+                                            ${{ $plan->price }}
+                                        </h3>
+                                        <p class="text-primary mb-0">
+                                            {{ $plan->getTranslation('title') }}
+                                        </p>
+                                        <p class="text-muted">
+                                            {{ $plan->getTranslation('type') }}
+                                        </p>
+                                        <hr>
+                                        <ul class="planFeatures ">
+                                            @foreach ($plan->options as $option)
+                                                <li>
+                                                    <p class="mb-2 text-muted">
+                                                        <i class="fa-solid fa-check text-success me-2"></i>
+                                                        {{ $option->getTranslation('title') }}
+                                                    </p>
+                                                </li>
+                                            @endforeach
+                                        </ul>
 
+                                        <div class="mt-3">
+                                            <a href="{{ $plan->link }}" class="btn btn-outline-primary d-inline-block">
+                                                {{ __('Get Started') }}
+                                            </a>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <div class="card text-center rounded-0 border-0">
-                                <div class="card-body p-5">
-                                    <h3 class="fw-bold">
-                                        $ 89.00
-                                    </h3>
-                                    <p class="text-primary mb-0">
-                                        FastCloud Plus
-                                    </p>
-                                    <p class="text-muted">
-                                        Month
-                                    </p>
-                                    <hr>
-                                    <ul class="planFeatures ">
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                Rich landing pages
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                100+ Unique Components
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                Speedy build tooling
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                6 months free support
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                6 months free support
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                6 months free support
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                6 months free support
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-link d-inline-block">
-                                        See More
-                                    </a>
-                                    <div class="mt-3">
-                                        <button class="btn btn-primary d-inline-block">
-                                            Get Started
-                                        </button>
+                        @endforeach
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <div class="card text-center rounded-0 border-0">
-                                <div class="card-body p-5">
-                                    <h3 class="fw-bold">
-                                        $ 89.00
-                                    </h3>
-                                    <p class="text-primary mb-0">
-                                        FastCloud Plus
-                                    </p>
-                                    <p class="text-muted">
-                                        Month
-                                    </p>
-                                    <hr>
-                                    <ul class="planFeatures ">
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                Rich landing pages
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                100+ Unique Components
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                Speedy build tooling
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="mb-2 text-muted">
-                                                <i class="fa-solid fa-check text-success me-2"></i>
-                                                6 months free support
-                                            </p>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-link d-inline-block">
-                                        See More
-                                    </a>
-                                    <div class="mt-3">
-                                        <button class="btn btn-outline-primary d-inline-block">
-                                            Get Started
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
             </section>
 
             <section class="section bg-white">
@@ -267,7 +117,9 @@
                                                 {{ $pages->where('link', 'home_try_free')->first()?->getTranslation('sub_title') }}
                                             </h3>
                                             <p class="font-size-14 m-0">
-                                                {!! nl2br(wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 120, "\n", true)) !!}
+                                                {!! nl2br(
+                                                    wordwrap($pages->where('link', 'home_try_free')->first()?->getTranslation('content'), 120, "\n", true),
+                                                ) !!}
                                             </p>
                                         </div>
                                         <a href="#"

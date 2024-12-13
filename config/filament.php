@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'home_url' => '/',
+    'home_url' => '/admin/pages',
 
     /*
     |--------------------------------------------------------------------------
@@ -136,12 +136,8 @@ return [
     */
 
     'widgets' => [
-        'namespace' => 'App\\Filament\\Widgets',
-        'path' => app_path('Filament/Widgets'),
-        'register' => [
-            Widgets\AccountWidget::class,
-            Widgets\FilamentInfoWidget::class,
-        ],
+        // ...
+        'register' => [],
     ],
 
     /*
@@ -240,7 +236,7 @@ return [
             'have_inline_labels' => false,
         ],
         'footer' => [
-            'should_show_logo' => true,
+            'should_show_logo' => false,
         ],
         'max_content_width' => null,
         'notifications' => [

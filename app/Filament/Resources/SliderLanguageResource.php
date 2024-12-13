@@ -22,6 +22,9 @@ class SliderLanguageResource extends Resource
     protected static ?string $navigationGroup = 'Sliders';
     protected static ?string $navigationParentItem = 'System';
 
+    protected static bool $shouldRegisterNavigation = false;
+
+
 
     public static function form(Form $form): Form
     {
