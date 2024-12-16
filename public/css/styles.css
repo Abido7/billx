@@ -8,6 +8,10 @@ body {
   font-size: 12px;
 }
 
+.login:hover {
+  background-color: #0066CC !important;
+}
+
 .font-size-14 {
   font-size: 14px !important;
 }
