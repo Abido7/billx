@@ -100,11 +100,11 @@
                                     @else
                                     <div class="card-body p-5">
                                         <h5
-                                            class=" title fw-bolder theme-lightblue-color">
+                                            class=" title fw-bolder ">
                                             ${{ $plan->price }}
                                         </h5>
                                         <h5
-                                            class="text-primary mb-0 title  theme-lightblue-color">
+                                            class="text-primary mb-0 title ">
                                             {{ $plan->getTranslation('title') }}
                                         </h5>
                                         <p class="text-muted">
