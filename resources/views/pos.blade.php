@@ -64,14 +64,49 @@
                         @foreach ($plans as $plan)
                             <div class="col-lg-4 col-md-6 mb-3">
                                 <div class="card text-center rounded-0 border-0">
+                                    @if (in_array($plan->getTranslation('title'), ['الباقه الاساسيه', 'Basic Package']))
+                                        <div class="card-body p-5">
+                                            <h3
+                                                class="title fw-bolder theme-lightblue-color">
+                                                ${{ $plan->price }}
+                                            </h3>
+                                            <h2
+                                                class="text-primary mb-0 title fw-bolder theme-lightblue-color">
+                                                {{ $plan->getTranslation('title') }}
+                                            </h2>
+                                            <p class="text-muted">
+                                                {{ $plan->getTranslation('type') }}
+                                            </p>
+                                            <hr>
+                                            <ul class="planFeatures ">
+                                                @foreach ($plan->options as $option)
+                                                    <li>
+                                                        <p class="mb-2 text-muted">
+                                                            <i class="fa-solid fa-check text-success me-2"></i>
+                                                            {{ $option->getTranslation('title') }}
+                                                        </p>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+
+                                            <div class="mt-3">
+                                                <a href="{{ $plan->link }}"
+                                                    class="btn btn-outline-primary d-inline-block">
+                                                    {{ __('Get Started') }}
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    @else
                                     <div class="card-body p-5">
-                                        <h3 class=" {{ in_array($plan->getTranslation('title'), ['الباقه الاساسيه', 'Basic Package']) ? 'title fw-bolder theme-lightblue-color' : '' }}">
+                                        <h4
+                                            class=" title fw-bolder theme-lightblue-color">
                                             ${{ $plan->price }}
-                                        </h3>
-                                        <h2
-                                            class="text-primary mb-0 {{ in_array($plan->getTranslation('title'), ['الباقه الاساسيه', 'Basic Package']) ? 'title fw-bolder theme-lightblue-color' : '' }}">
+                                        </h4>
+                                        <h5
+                                            class="text-primary mb-0 title  theme-lightblue-color">
                                             {{ $plan->getTranslation('title') }}
-                                        </h2>
+                                        </h5>
                                         <p class="text-muted">
                                             {{ $plan->getTranslation('type') }}
                                         </p>
@@ -88,12 +123,15 @@
                                         </ul>
 
                                         <div class="mt-3">
-                                            <a href="{{ $plan->link }}" class="btn btn-outline-primary d-inline-block">
+                                            <a href="{{ $plan->link }}"
+                                                class="btn btn-outline-primary d-inline-block">
                                                 {{ __('Get Started') }}
                                             </a>
 
                                         </div>
                                     </div>
+                                    @endif
+
                                 </div>
                             </div>
                         @endforeach
