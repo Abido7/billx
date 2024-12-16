@@ -51,10 +51,10 @@
             <section class="section theme-grey-bg plans-section">
                 <div class="container">
                     <div class="text-center">
-                        <h2 class="fs-3 text-black ">
+                        <h1 class="title fw-bolder theme-lightblue-color">
                             {{ $pages->where('link', 'plans')->first()?->getTranslation('title') }}
-                        </h2>
-                        <p>
+                        </h1>
+                        <p class="fw-bolder">
                             {{ $pages->where('link', 'plans')->first()?->getTranslation('content') }}
 
                         </p>
@@ -65,12 +65,13 @@
                             <div class="col-lg-4 col-md-6 mb-3">
                                 <div class="card text-center rounded-0 border-0">
                                     <div class="card-body p-5">
-                                        <h3 class="fw-bold">
+                                        <h3 class=" {{ in_array($plan->getTranslation('title'), ['الباقه الاساسيه', 'Basic Package']) ? 'title fw-bolder theme-lightblue-color' : '' }}">
                                             ${{ $plan->price }}
                                         </h3>
-                                        <p class="text-primary mb-0">
+                                        <h2
+                                            class="text-primary mb-0 {{ in_array($plan->getTranslation('title'), ['الباقه الاساسيه', 'Basic Package']) ? 'title fw-bolder theme-lightblue-color' : '' }}">
                                             {{ $plan->getTranslation('title') }}
-                                        </p>
+                                        </h2>
                                         <p class="text-muted">
                                             {{ $plan->getTranslation('type') }}
                                         </p>
