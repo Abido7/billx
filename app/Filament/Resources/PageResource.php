@@ -67,7 +67,9 @@ class PageResource extends Resource
 
                                     TextInput::make('title')
                                         ->required()
-                                        ->label('title'),
+                                        ->label('Title'),
+                                    TextInput::make('sub_title')
+                                        ->label('SubTitle'),
 
                                     Textarea::make('content')
                                         ->required()

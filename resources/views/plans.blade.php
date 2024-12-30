@@ -13,11 +13,8 @@
                                     <h1 class="mb-2 fw-bolder theme-lightblue-color">
                                         {{ $pages->where('link', 'plans')->first()?->getTranslation('title') }}
                                     </h1>
-                                    <h2 class="fs-2 fw-semibold text-black">
-                                        {{ $pages->where('link', 'plans')->first()?->getTranslation('content') }}
-                                    </h2>
                                     <p class="mb-0 fw-light ">
-                                        {{ $pages->where('link', 'plans')->first()?->getTranslation('sub_title') }}
+                                        {{ $pages->where('link', 'plans')->first()?->getTranslation('content') }}
                                      </p>
                                 </div>
                             </div>
