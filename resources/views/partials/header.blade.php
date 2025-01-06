@@ -55,6 +55,14 @@
                                     </a>
                                 @endforeach
                             </li>
+                            <li class="me-3">
+                                @foreach ($settings->where('title', 'like', 'youtube') as $link)
+                                    <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank"
+                                        rel="nofollow">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                @endforeach
+                            </li>
                         </ul>
                     </div>
                 </div>
