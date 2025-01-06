@@ -34,7 +34,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-7">
-                                        <img class="img-fluid" alt="Main Banner"
+                                        <img loading="lazy" class="img-fluid" alt="Main Banner"
                                             src="{{ url($slider->getFirstMediaUrl()) }}" />
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                             <div class="row gx-xl-5 align-items-center">
                                 <div class="col-lg-6 mb-lg-0 mb-4">
                                     <div class="image-box with-grey-bg">
-                                        <img class="img-fluid w-100 d-block" alt="Main Banner"
+                                        <img loading="lazy" class="img-fluid w-100 d-block" alt="Main Banner"
                                             src="{{ url($pages->where('link', 'home_about_us')?->first()?->getFirstMediaUrl()) }}" />
                                         <div class="years text-white d-flex align-items-center">
                                             <!-- <p class="text-white"> -->
@@ -164,7 +164,7 @@
                                     <div class="col-lg-4 m-lg-0 my-2" data-aos="fade-right" data-aos-delay="300">
                                         <div class="card d-block bg-white with-hover-shadow text-center">
                                             <div class="pt-4 px-3 pb-0">
-                                                <img src="{{ url($page->getFirstMediaUrl()) }}" class="card-img-top w-auto"
+                                                <img loading="lazy" src="{{ url($page->getFirstMediaUrl()) }}" class="card-img-top w-auto"
                                                     alt="Monitoring 24/7">
                                             </div>
                                             <div class="card-body text-box text-center pb-4">
@@ -216,7 +216,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="image-box with-grey-bg">
-                                        <img class="img-fluid w-100 d-block" alt="Main Banner"
+                                        <img loading="lazy" class="img-fluid w-100 d-block" alt="Main Banner"
                                             src="{{ $pages->where('link', 'why_choose_billx')->first()?->getFirstMediaUrl() }}" />
                                     </div>
                                 </div>
@@ -307,7 +307,7 @@
                                     {{-- {{ dd($img->getUrl()) }} --}}
                                     @if ($key > 0)
                                         <div class="col-sm-6">
-                                            <img class="img-fluid w-100 d-block" alt="Image 3"
+                                            <img loading="lazy" class="img-fluid w-100 d-block" alt="Image 3"
                                                 src="{{ $img->getUrl() }}" />
                                         </div>
                                     @endif

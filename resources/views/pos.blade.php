@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <img class="w-100 img-fluid" alt="POS Image"
+                <img loading="lazy" class="w-100 img-fluid" alt="POS Image"
                     src="{{ $pages->where('link', 'pos_section_1')->first()?->getFirstMediaUrl() }}" />
             </section>
 
@@ -28,7 +28,7 @@
                             <div class="row gx-lg-5 align-items-center">
                                 <div class="col-lg-6">
                                     <div class="image-box d-flex justify-content-center">
-                                        <img class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
+                                        <img loading="lazy" class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
                                             src="{{ $pages->where('link', 'pos_section_2')->first()?->getFirstMediaUrl() }}" />
                                     </div>
                                 </div>
@@ -178,11 +178,11 @@
                                 <div class="row g-4">
 
                                     <div class="col-sm-6">
-                                        <img class="img-fluid w-100 d-block" alt="Image 3"
+                                        <img loading="lazy" class="img-fluid w-100 d-block" alt="Image 3"
                                             src="{{ $pages->where('link', 'home_try_free')->first()?->getMedia()[1]->getUrl() }}" />
                                     </div>
                                     <div class="col-sm-6">
-                                        <img class="img-fluid w-100 d-block" alt="Image 3"
+                                        <img loading="lazy" class="img-fluid w-100 d-block" alt="Image 3"
                                             src="{{ $pages->where('link', 'home_try_free')->first()?->getMedia()[2]->getUrl() }}" />
                                     </div>
                                 </div>

@@ -66,7 +66,7 @@
                     <div class="row mt-5">
                         @foreach ($pages->where('link', 'plans')->first()?->getMedia() as $media)
                         <div class="col-sm-6">
-                            <img class="img-fluid w-100 d-block" alt="Image 5" src="{{$media->getUrl()}}">
+                            <img loading="lazy" class="img-fluid w-100 d-block" alt="Image 5" src="{{$media->getUrl()}}">
                         </div>
                         @endforeach
             

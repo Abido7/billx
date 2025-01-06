@@ -5,15 +5,15 @@
                 <div class="widget about-us-widget">
                     <div class="theme-widget-header mb-md-4 mb-3">
                         <a class="d-inline-block m-0" href="#">
-                            <img class="" alt="Logo" src="{{ asset('images/80988.png') }}" />
+                            <img loading="lazy" class="" alt="Logo" src="{{ asset('images/80988.png') }}" />
                         </a>
                     </div>
                     <div class="theme-widget-body">
                         <div class="text-box">
                             <p class="font-size-14">
-                                {{__('In the fast-paced world of modern technology,many leadership executives and organizations understand that building.')}}
+                                {{ __('In the fast-paced world of modern technology,many leadership executives and organizations understand that building.') }}
                             </p>
-                            <h6 class="title mb-3">{{__('Get ready to start with us')}}</h6>
+                            <h6 class="title mb-3">{{ __('Get ready to start with us') }}</h6>
                             <div class='foot-btn'>
                                 <a href="{{ url('try-free') }}"
                                     class="btn btn-primary d-flex align-items-center px-4 py-2 float-start">
@@ -27,19 +27,20 @@
             <div class="col-lg-3 col-6 mb-4 footer-widget">
                 <div class="widget">
                     <div class="theme-widget-header mb-md-4 mb-3">
-                        <h4 class="widget-title">{{__('Company')}}</h4>
+                        <h4 class="widget-title">{{ __('Company') }}</h4>
                     </div>
                     <div class="theme-widget-body">
                         <ul class="navbar-nav footer-nav">
-                            <li class="nav-item"><a class="nav-link" href="{{ url('about_us') }}">{{__('About Us')}}</a>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="{{ url('about_us') }}">{{ __('About Us') }}</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('privacy') }}">
-                                {{__('Privacy Poilcy')}}
-                            </a>
+                                    {{ __('Privacy Poilcy') }}
+                                </a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('contact') }}">
-                               {{__('Contact Us')}}
-                            </a>
+                                    {{ __('Contact Us') }}
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -48,23 +49,24 @@
             <div class="col-lg-3 col-6 mb-4 footer-widget">
                 <div class="widget">
                     <div class="theme-widget-header mb-md-4 mb-3">
-                        <h4 class="widget-title">{{__('Get Help')}}</h4>
+                        <h4 class="widget-title">{{ __('Get Help') }}</h4>
                     </div>
                     <div class="theme-widget-body">
                         <ul class="navbar-nav footer-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('support') }}">
-                            
+
                                     {{ __(str_replace('-', ' ', 'Support-Request')) }}
                                 </a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="{{ url('faq') }}">
-                                
-                                {{ __('Faq Questions') }}
-                            </a>
+
+                                    {{ __('Faq Questions') }}
+                                </a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="{{ url('plans') }}">{{__('Plans')}}</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="{{ url('plans') }}">{{ __('Plans') }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,19 +74,19 @@
             <div class="col-lg-3 mb-4 footer-widget">
                 <div class="widget">
                     <div class="theme-widget-header mb-md-4 mb-3">
-                        <h4 class="widget-title">{{__('Newsletter')}}</h4>
+                        <h4 class="widget-title">{{ __('Newsletter') }}</h4>
                     </div>
                     <div class="theme-widget-body">
                         <div class="text-box">
                             <p class="font-size-15 fw-light">
-                               {{__('Sign up and receive the latest tips via email')}}
+                                {{ __('Sign up and receive the latest tips via email') }}
                             </p>
                             <form class="newsletter-form">
                                 <input type="email" class="form-control form-control-lg mb-2 font-size-15"
-                                    name="newsletterEmail" placeholder="{{__('Enter Your Mail')}}" />
+                                    name="newsletterEmail" placeholder="{{ __('Enter Your Mail') }}" />
                                 <button type="button"
                                     class="btn btn-lg btn-primary d-flex align-items-center justify-content-center px-4 py-2 btn-block w-100 font-size-18 fw-medium">
-                                   {{__('Subscribe Now')}}
+                                    {{ __('Subscribe Now') }}
                                     <i class="fa-solid fa-paper-plane fa-xs ms-2"></i>
                                 </button>
                             </form>
@@ -99,26 +101,43 @@
             </div>
             <div class="col-md-auto me-md-auto ms-md-0 ms-auto me-auto">
                 <ul class="nav footer-social-nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.facebook.com" target="_blank" rel="nofollow">
-                            <img class="" alt="Facebook" src="{{ asset('images/facebook.svg') }}" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.instagram.com" target="_blank" rel="nofollow">
-                            <img class="" alt="Instagram" src="{{ asset('images/instagram.svg') }}" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank" rel="nofollow">
-                            <img class="" alt="X" src="{{ asset('images/twitter.svg') }}" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" target="_blank" rel="nofollow">
-                            <img class="" alt="github" src="{{ asset('images/github.svg') }}" />
-                        </a>
-                    </li>
+                    @foreach ($settings->where('title', 'like', 'twitter') as $link)
+                        <li class="me-3">
+                            <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank" rel="nofollow">
+
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+
+                        </li>
+                    @endforeach
+                    @foreach ($settings->where('title', 'like', 'facebook') as $link)
+                        <li class="me-3">
+                            <a class="" href="{{ url($link->value ?? '/') }}" target="_blank" rel="nofollow">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                    @endforeach
+                    @foreach ($settings->where('title', 'like', 'instagram') as $link)
+                        <li class="me-3">
+                            <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank" rel="nofollow">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    @endforeach
+                    @foreach ($settings->where('title', 'like', 'github') as $link)
+                        <li class="me-3">
+                            <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank" rel="nofollow">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                    @endforeach
+                    @foreach ($settings->where('title', 'like', 'youtube') as $link)
+                        <li class="me-3">
+                            <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank" rel="nofollow">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
             <div class="col-md-auto ms-md-auto me-md-0 me-auto ms-auto text-center">

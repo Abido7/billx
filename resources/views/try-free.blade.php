@@ -150,7 +150,7 @@
 
                         @foreach ($pages->where('link', 'try_free_section_2')->first()?->getMedia() as $key => $img)
                             <div class="col-sm-6">
-                                <img class="img-fluid w-100 d-block" alt="Image 3"
+                                <img loading="lazy" class="img-fluid w-100 d-block" alt="Image 3"
                                     src="{{ $img->geturl() }}" />
                             </div>
                         @endforeach

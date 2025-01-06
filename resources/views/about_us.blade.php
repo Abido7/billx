@@ -43,7 +43,7 @@
                         <div class="col-xl-11 mx-auto">
                             <div class="row gx-xl-5 align-items-center">
                                 <div class="col-lg-12 mb-lg-0 mb-4">
-                                    <img class="img-fluid w-100 d-block" alt="About Us"
+                                    <img loading="lazy" class="img-fluid w-100 d-block" alt="About Us"
                                         src="{{ url($pages->where('link', 'about_us_section_2')?->first()?->getFirstMediaUrl()) }}" />
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                             <div class="row gx-xl-5 align-items-center">
                                 <div class="col-lg-6 mb-lg-0 mb-4">
                                     <div class="text-box">
-                                        <img class="img-fluid w-100 d-block mb-md-5 mb-3" alt="Our Vision"
+                                        <img loading="lazy" class="img-fluid w-100 d-block mb-md-5 mb-3" alt="Our Vision"
                                             src="{{ url($pages->where('link', 'our_mission')?->first()?->getFirstMediaUrl()) }}"
                                             data-aos="fade-right" data-aos-delay="300" />
                                         <h5 class="title text-capitalize theme-lightblue-color" data-aos="fade-right"
@@ -126,7 +126,7 @@
                                         </p>
 
                                         </p>
-                                        <img class="img-fluid w-100 d-block" alt="Our Mission"
+                                        <img loading="lazy" class="img-fluid w-100 d-block" alt="Our Mission"
                                             src="{{ url($pages->where('link', 'our_vision')?->first()?->getFirstMediaUrl() ?? '/') }}"
                                             data-aos="fade-left" data-aos-delay="300" />
                                     </div>
@@ -146,29 +146,29 @@
                                 <div class="row h-100">
                                     <div
                                         class="col-lg-2 col-md-3 col-xs-6 h-100 d-flex align-items-center justify-content-center mb-4 mb-sm-0">
-                                        <img class="img-fluid" alt="Microsoft" src="{{ asset('images/Microsoft.svg') }}" />
+                                        <img loading="lazy" class="img-fluid" alt="Microsoft" src="{{ asset('images/Microsoft.svg') }}" />
                                     </div>
                                     <div
                                         class="col-lg-2 col-md-3 col-xs-6 h-100 d-flex align-items-center justify-content-center mb-4 mb-sm-0">
-                                        <img class="img-fluid" alt="Microsoft" src="{{ asset('images/Hubspot.svg') }}" />
+                                        <img loading="lazy" class="img-fluid" alt="Microsoft" src="{{ asset('images/Hubspot.svg') }}" />
                                     </div>
                                     <div
                                         class="col-lg-2 col-md-3 col-xs-6 h-100 d-flex align-items-center justify-content-center mb-4 mb-sm-0">
-                                        <img class="img-fluid" alt="Microsoft" src="{{ asset('images/Slack.svg') }}" />
+                                        <img loading="lazy" class="img-fluid" alt="Microsoft" src="{{ asset('images/Slack.svg') }}" />
                                     </div>
                                     <div
                                         class="col-lg-2 col-md-3 col-xs-6 h-100 d-flex align-items-center justify-content-center mb-4 mb-sm-0">
-                                        <img class="img-fluid" alt="Microsoft"
+                                        <img loading="lazy" class="img-fluid" alt="Microsoft"
                                             src="{{ asset('images/Trustpilot.svg') }}" />
                                     </div>
                                     <div
                                         class="col-lg-2 col-md-3 col-xs-6 h-100 d-flex align-items-center justify-content-center mb-4 mb-sm-0">
-                                        <img class="img-fluid" alt="Microsoft"
+                                        <img loading="lazy" class="img-fluid" alt="Microsoft"
                                             src="{{ asset('images/Xboxone.svg') }}" />
                                     </div>
                                     <div
                                         class="col-lg-2 col-md-3 col-xs-6 h-100 d-flex align-items-center justify-content-center mb-4 mb-sm-0">
-                                        <img class="img-fluid" alt="Microsoft"
+                                        <img loading="lazy" class="img-fluid" alt="Microsoft"
                                             src="{{ asset('images/Microsoft.svg') }}" />
                                     </div>
                                 </div>

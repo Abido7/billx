@@ -28,7 +28,7 @@
                         <div class="col-xl-10 mx-auto pb-md-5 pb-3">
                             <div class="row gx-md-5">
                                 <div class="col-sm-6 mb-lg-0 mb-4">
-                                    <img class="img-fluid w-100 d-block support_image rounded" alt="Image 3"
+                                    <img loading="lazy" class="img-fluid w-100 d-block support_image rounded" alt="Image 3"
                                         src="{{  $pages->where('link', 'support')->first()?->getFirstMediaUrl() }}" />
                                 </div>
                                 <div class="col-lg-6">

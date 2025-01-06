@@ -17,7 +17,7 @@
                         </div>
                     </div>
                 </div>
-                <img class="img-fluid w-100 object-fit-cover" alt="GPS Image"
+                <img loading="lazy" class="img-fluid w-100 object-fit-cover" alt="GPS Image"
                     src="{{ $pages->where('link', 'gps_section_1')->first()?->getFirstMediaUrl() }}" />
             </section>
 
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="image-box d-flex justify-content-center">
-                                        <img class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
+                                        <img loading="lazy" class="img-fluid w-lg-75 d-inline-block" alt="Main Banner"
                                             src="{{ $pages->where('link', 'gps_section_2')->first()?->getFirstMediaUrl() }}" />
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 mb-3 mb-lg-0">
                             <div class="img-container">
-                                <img class="w-100" src="{{ asset('images/images-collection.png') }}" alt="">
+                                <img loading="lazy" class="w-100" src="{{ asset('images/images-collection.png') }}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="image-box d-flex justify-content-center">
-                                            <img class="img-fluid w-lg-75 d-inline-block rounded" alt="Main Banner"
+                                            <img loading="lazy" class="img-fluid w-lg-75 d-inline-block rounded" alt="Main Banner"
                                                 src="{{ $product->getFirstMediaUrl() }}" />
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@
                                 @foreach ($pages->where('link', 'home_try_free')->first()?->getMedia() as $key => $img)
                                     @if ($key > 2)
                                         <div class="col-sm-6">
-                                            <img class="img-fluid w-100 d-block" alt="Image 3"
+                                            <img loading="lazy" class="img-fluid w-100 d-block" alt="Image 3"
                                                 src="{{ $img->getUrl() }}" />
                                         </div>
                                     @endif
