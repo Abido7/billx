@@ -22,29 +22,39 @@
                     <div class="d-flex social-links">
                         <ul class="d-flex">
                             <li class="me-3">
-                                <a href="{{ url($settings->where('title', 'twitter')->first()?->value ?? '/') }}"
-                                    target="_blank" rel="nofollow">
+                                @foreach ($settings->where('title', 'like', 'twitter') as $link)
+                                    <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank"
+                                        rel="nofollow">
 
-                                    <i class="fa-brands fa-twitter"></i>
-                                </a>
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                @endforeach
+
                             </li>
                             <li class="me-3">
-                                <a href="{{ url($settings->where('title', 'facebook')->first()?->value ?? '/') }}"
-                                    target="_blank" rel="nofollow">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
+                                @foreach ($settings->where('title', 'like', 'facebook') as $link)
+                                    <a class="" href="{{ url($link->value ?? '/') }}" target="_blank"
+                                        rel="nofollow">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                @endforeach
                             </li>
                             <li class="me-3">
-                                <a href="{{ url($settings->where('title', 'instagram')->first()?->value ?? '/') }}"
-                                    target="_blank" rel="nofollow">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
+                                @foreach ($settings->where('title', 'like', 'instagram') as $link)
+                                    <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank"
+                                        rel="nofollow">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                @endforeach
                             </li>
                             <li class="me-3">
-                                <a href="{{ url($settings->where('title', 'github')->first()?->value ?? '/') }}"
-                                    target="_blank" rel="nofollow">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
+                                @foreach ($settings->where('title', 'like', 'github') as $link)
+                                    <a class="mx-1" href="{{ url($link->value ?? '/') }}" target="_blank"
+                                        rel="nofollow">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                @endforeach
+                            </li>
                         </ul>
                     </div>
                 </div>
